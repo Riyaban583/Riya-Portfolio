@@ -1,0 +1,158 @@
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;          /* balanced spacing */
+  background: #0f0f0f;
+}
+
+/* ================= LOGO ================= */
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #c84cff, #ff914d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: 0.4s ease;
+}
+
+.logo-text:hover {
+  transform: scale(1.05);
+}
+
+/* ================= NAV MENU ================= */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 50px;                 /* equal spacing */
+}
+
+/* menu item */
+.nav-menu li {
+  position: relative;
+  cursor: pointer;
+}
+
+/* link */
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+/* hover color */
+.nav-menu li a:hover {
+  color: #ff914d;
+}
+
+/* underline */
+.nav-menu li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #c84cff, #ff914d);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* hover underline */
+.nav-menu li:hover::after {
+  width: 100%;
+}
+
+/* active underline */
+.nav-menu li.active a {
+  color: #c84cff;
+}
+
+.nav-menu li.active::after {
+  width: 100%;
+}
+
+/* ================= CONTACT BUTTON ================= */
+.nav-connect {
+  padding: 16px 36px;
+  border-radius: 50px;
+  background: linear-gradient(267deg, #DA7C25, #B923E1);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-connect a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-connect:hover {
+  transform: scale(1.05);
+}
+
+/* ================= MOBILE ICONS ================= */
+.nav-mob-open,
+.nav-mob-close {
+  display: none;
+}
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 20px 30px;
+  }
+
+  .nav-connect {
+    display: none;
+  }
+
+  .nav-mob-open {
+    display: block;
+    position: fixed;
+    right: 30px;
+    width: 28px;
+    z-index: 3;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 320px;
+    height: 100%;
+    background: #1F0016;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 100px;
+    gap: 30px;
+    transition: right 0.4s ease;
+    z-index: 2;
+  }
+
+  .nav-menu li {
+    padding-left: 40px;
+  }
+
+  .nav-menu li a {
+    font-size: 22px;
+  }
+
+  .nav-mob-close {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 28px;
+  }
+}

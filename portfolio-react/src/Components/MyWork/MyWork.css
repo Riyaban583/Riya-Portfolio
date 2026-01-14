@@ -1,0 +1,166 @@
+/* ================= Wrapper ================= */
+
+.myworks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  margin: 80px auto;
+  max-width: 1400px;
+  padding: 0 40px;
+}
+
+/* ================= Title ================= */
+
+.myworks-title {
+  text-align: center;
+}
+
+.myworks-title h1 {
+  font-size: 80px;
+  font-weight: 600;
+  position: relative;
+}
+
+.myworks-title h1::after {
+  content: "";
+  width: 160px;
+  height: 5px;
+  background: linear-gradient(267deg, #da7c25, #b923e1);
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+/* ================= Grid ================= */
+
+.myworks-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  width: 100%;
+}
+
+/* ================= Card ================= */
+
+.myworks-format {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+
+  padding: 22px;
+  border-radius: 16px;
+  background: #1c1c1c;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.myworks-format:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(180, 21, 255, 0.35);
+}
+
+/* ================= Image ================= */
+
+.mywork-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;          /* ♟️ FULL chess board dikhega */
+  background: #ffffff;          /* white bg for chess board */
+  border-radius: 12px;
+  padding: 10px;                /* thoda spacing */
+}
+
+
+/* ================= Content ================= */
+
+.mywork-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+/* Colourful headline */
+.myworks-format h3 {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #9b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+/* Description */
+.myworks-format p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #d4d4d4;
+  text-align: center;
+}
+
+/* ================= Read More ================= */
+
+.myworks-readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.myworks-readmore img {
+  width: 18px;
+}
+
+/* ================= Tablet ================= */
+
+@media (max-width: 1024px) {
+  .myworks {
+    padding: 0 24px;
+  }
+
+  .myworks-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .myworks-title h1 {
+    font-size: 60px;
+  }
+}
+
+/* ================= Mobile ================= */
+
+@media (max-width: 768px) {
+  .myworks {
+    padding: 0 16px;
+    gap: 40px;
+  }
+
+  .myworks-title h1 {
+    font-size: 44px;
+  }
+
+  .myworks-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .myworks-format {
+    padding: 18px;
+  }
+
+  .mywork-img {
+    height: 160px;
+  }
+
+  .myworks-format p {
+    font-size: 15px;
+  }
+}
